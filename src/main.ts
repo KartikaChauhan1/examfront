@@ -1,9 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
-import { SignupComponent } from './app/pages/signup/signup.component'; // Ensure this path is correct
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(SignupComponent, {
-  providers: [
-    provideHttpClient(), // Provide HttpClient globally
-  ],
-}).catch(err => console.error(err));
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
