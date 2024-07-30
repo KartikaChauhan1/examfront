@@ -23,8 +23,8 @@ export class SignupComponent {
   public user = {
     username: '',
     password: '',
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
   };
@@ -53,10 +53,11 @@ export class SignupComponent {
     this.user = {
       username: '',
       password: '',
-      firstname: '',
-      lastname: '',
+      firstName: '',
+      lastName: '',
       email: '',
       phone: '',
     };
   }
+  
 }
