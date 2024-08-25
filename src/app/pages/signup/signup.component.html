@@ -11,6 +11,7 @@
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>User Name</mat-label>
                     <input
+                      required
                       matInput
                       placeholder="Enter Here"
                       [(ngModel)]="user.username"
@@ -22,6 +23,7 @@
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>Password</mat-label>
                     <input
+                      required
                       type="password"
                       matInput
                       placeholder="Enter Here"
@@ -34,6 +36,7 @@
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>First Name</mat-label>
                     <input
+                      required
                       matInput
                       placeholder="Enter Here"
                       [(ngModel)]="user.firstName"
@@ -45,6 +48,7 @@
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>Last Name</mat-label>
                     <input
+                      required
                       matInput
                       placeholder="Enter Here"
                       [(ngModel)]="user.lastName"
@@ -56,6 +60,7 @@
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>E-Mail</mat-label>
                     <input
+                      required
                       type="email"
                       matInput
                       placeholder="Enter Here"
@@ -68,6 +73,7 @@
                   <mat-form-field class="full-width" appearance="outline">
                     <mat-label>Phone No.</mat-label>
                     <input
+                      required
                       type="tel"
                       matInput
                       placeholder="Enter Here"
@@ -81,7 +87,6 @@
                     <button type="button" style="margin-left:20px" mat-raised-button color="accent" (click)="clearForm()">Clear</button>
                   </div>
                 </form>
-
             </div>
         </div>
 

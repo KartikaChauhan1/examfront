@@ -1,1 +1,45 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt20">
+            <div class="col-md-6 offset-md-3">
+              <mat-card>
+
+                <div class="container text-center">
+                    <img src="../../../assets/logo.webp" alt="">
+                </div>
+                <h1 class="text-center">login here</h1>
+
+                <form action="">
+                <!-- username field -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input
+                      required
+                      matInput
+                      placeholder="Enter Here"
+                    />
+                    <mat-hint>valid username</mat-hint>
+                  </mat-form-field>
+
+                  <!--password field-->
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>User password</mat-label>
+                    <input type="password"
+                      required
+                      matInput
+                      placeholder="Enter Here"
+                    />
+                  </mat-form-field>
+                  <div class="conatiner text-center ">
+                    <button mat-raised-button color="primary" type="submit">
+                        login
+                    </button>
+                    <button class="ml10" mat-raised-button color="accent">Reset</button>
+                  </div>
+
+              </form>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
