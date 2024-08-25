@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
+import { NavbarComponent } from "../../components/navbar/navbar.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -14,10 +18,13 @@ import { UserService } from '../../services/user.service';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatButtonModule
-  ],
+    MatButtonModule,
+    MatSnackBarModule,
+    NavbarComponent
+],
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  template:'<app-signup></app-signup>',
 })
 export class SignupComponent {
   public user = {
@@ -29,22 +36,27 @@ export class SignupComponent {
     phone: '',
   };
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,private snack:MatSnackBar){}
 
   formSubmit() {
     console.log(this.user);
     if (this.user.username === '' || this.user.username == null) {
-      alert('Username is required !!');
+      this.snack.open('Username is required !!','',{
+        duration:3000,
+      });
       return;
     }
     this.userService.addUser(this.user).subscribe(
-      (data) => {
+      (data:any) => {
         console.log(data);
-        alert('User created successfully');
+        //alert('success');
+        Swal.fire('Success done!!','User id is' + data.id,'success');
       },
       (error) => {
-        console.error('Error:', error);
-        alert('Something went wrong: ' + error);
+        console.log(error);
+        this.snack.open('Something went wrong!! ','',{
+          duration:3000,
+        });
       }
     );
   }
